@@ -14,9 +14,9 @@
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="/">home</a>
-                        <a class="nav-link active" aria-current="page" href="/about">about</a>
-                        <a class="nav-link" href="{{ route('articles.index') }}">articles</a>
+                        <a href="/">home</a>
+                        <a href="/about">about</a>
+                        <a href="{{ route('articles.index') }}">articles</a>
                     </div>
                 </div>
             </div>
