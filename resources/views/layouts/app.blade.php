@@ -10,7 +10,19 @@
         <script src="{{ asset('js/app.js') }}"></script>
     </head>
     <body>
-        <div class="container mt-4">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="/">home</a>
+                        <a class="nav-link active" aria-current="page" href="/about">about</a>
+                        <a class="nav-link" href="{{ route('articles.index') }}">articles</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
             <h1>@yield('header')</h1>
             <div>
                 @yield('content')
