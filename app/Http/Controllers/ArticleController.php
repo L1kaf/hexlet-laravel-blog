@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Http\Requests\UpdateArticleRequest;
 
 class ArticleController extends Controller
 {
@@ -57,16 +58,10 @@ class ArticleController extends Controller
         return view('article.edit', compact('article'));
     }
 
-    public function update(Request $request, $id)
+    public function update(UpdateArticleRequest $request, $id)
     {
         $article = Article::findOrFail($id);
-        $data = $this->validate($request, [
-            // У обновления немного измененная валидация
-            // В проверку уникальности добавляется название поля и id текущего объекта
-            // Если этого не сделать, Laravel будет ругаться, что имя уже существует
-            'name' => 'required|unique:articles,name,' . $article->id,
-            'body' => 'required|min:10',
-        ]);
+        $data = $request->validated();
 
         $article->fill($data);
         $article->save();
