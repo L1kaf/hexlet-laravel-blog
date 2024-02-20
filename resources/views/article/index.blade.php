@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <h1>Список статей</h1>
     @foreach ($articles as $article)
         <h2><a href="{{ route('articles.show', $article->id) }}">{{$article->name}}</a></h2>

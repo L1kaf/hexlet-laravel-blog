@@ -7,17 +7,17 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="csrf-param" content="_token" />
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="{{ asset('js/app.js') }}"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a href="/">home</a>
-                        <a href="/about">about</a>
-                        <a href="{{ route('articles.index') }}">articles</a>
-                    </div>
+            <div class="container-fluid"> 
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/">home</a>
+                    <a class="nav-link" href="/about">about</a>
+                    <a class="nav-link" href="{{ route('articles.index') }}">articles</a>
+                    <a class="nav-link" href="{{ route('articles.create') }}">create</a>
                 </div>
             </div>
         </nav>
