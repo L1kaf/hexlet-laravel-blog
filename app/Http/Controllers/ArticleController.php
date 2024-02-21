@@ -67,7 +67,7 @@ class ArticleController extends Controller
         $article->save();
         return redirect()
             ->route('articles.index')
-            ->with('success', 'Статья изменена!');;
+            ->with('success', 'Статья изменена!');
     }
 
     public function destroy($id)
@@ -77,6 +77,6 @@ class ArticleController extends Controller
         if ($article) {
         $article->delete();
         }
-        return redirect()->route('articles.index');
+        return redirect()->route('articles.index')->with('success', 'Статья удалена');
     }
 }
